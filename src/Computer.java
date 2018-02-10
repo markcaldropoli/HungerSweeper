@@ -1,12 +1,13 @@
-import java.util.Scanner;
+import java.util.Random;
 
-public class Player {
+public class Computer extends Player {
 	private int x;
 	private int y;
 	private String name;
 	private int health = 100;
 	
-	public Player(String name) {
+	public Computer(String name) {
+		super(name);
 		this.name = name;
 	}
 	
@@ -43,57 +44,58 @@ public class Player {
 	}
 
 	public void move() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Please input a direction: ");
-		System.out.println("(up,down,right,left)");
-		
 		while(true) {
-			String mov = sc.nextLine();
-			if(mov.equalsIgnoreCase("up")) {
+			//random # 0=up, 1=down, 2=right, 3=left
+			Random random = new Random();
+			int rand = random.nextInt(5);
+			
+			if(rand == 0) {
 				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 15) {
 					y--;
 					break;
-				} else {
-					System.out.println("Invalid move, please pick a different direction.");
 				}
-			} else if(mov.equalsIgnoreCase("down")) {
+			} else if(rand == 1) {
 				if(this.getX() > 0 && this.getX() < 15 && this.getY()+1 > 0 && this.getY()+1 < 15) {
 					y++;
 					break;
-				} else {
-					System.out.println("Invalid move, please pick a different direction.");
 				}
-			} else if(mov.equalsIgnoreCase("right")) {
+			} else if(rand == 2) {
 				if(this.getX()+1 > 0 && this.getX()+1 < 15 && this.getY() > 0 && this.getY() < 15) {
 					x++;
 					break;
-				} else {
-					System.out.println("Invalid move, please pick a different direction.");
 				}
-			} else if(mov.equalsIgnoreCase("left")) {
+			} else if(rand == 3) {
 				if(this.getX()-1 > 0 && this.getX()-1 < 15 && this.getY() > 0 && this.getY() < 15) {
 					x--;
 					break;
-				} else {
-					System.out.println("Invalid move, please pick a different direction.");
 				}
-			} else {
-				System.out.println("Please enter a valid direction.");
 			}
 		}
-		sc.close();
 	}
 	
 	public static void main(String[] args) {
-		Player p1 = new Player("Mark");
-		Player p2 = new Player("Marc");
-		Player p3 = new Player("Logen");
+		Computer p1 = new Computer("Mark");
+		Computer p2 = new Computer("Marc");
+		Computer p3 = new Computer("Logen");
 		p1.setX(5);
 		p1.setY(5);
 		p2.setX(1);
 		p2.setY(1);
 		p3.setX(14);
 		p3.setY(14);
-		p3.move();
+		
+		for(int i = 0; i < 10; i++) {
+			System.out.println(p1.getName() + " " + p1.getX() + " " + p1.getY());
+			p1.move();
+			System.out.println(p1.getName() + " " + p1.getX() + " " + p1.getY());
+
+			System.out.println(p2.getName() + " " + p2.getX() + " " + p2.getY());
+			p2.move();
+			System.out.println(p2.getName() + " " + p2.getX() + " " + p2.getY());
+			
+			System.out.println(p3.getName() + " " + p3.getX() + " " + p3.getY());
+			p3.move();
+			System.out.println(p3.getName() + " " + p3.getX() + " " + p3.getY());
+		}
 	}
 }
