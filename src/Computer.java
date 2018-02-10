@@ -47,7 +47,7 @@ public class Computer extends Player {
 		while(true) {
 			//random # 0=up, 1=down, 2=right, 3=left
 			Random random = new Random();
-			int rand = random.nextInt(5);
+			int rand = random.nextInt(4);
 			
 			if(rand == 0) {
 				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 15) {
