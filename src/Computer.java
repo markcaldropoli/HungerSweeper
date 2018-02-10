@@ -9,6 +9,10 @@ public class Computer extends Player {
 	public Computer(String name) {
 		super(name);
 		this.name = name;
+		
+		Random random = new Random();
+		this.x = random.nextInt(15);
+		this.y = random.nextInt(15);
 	}
 	
 	public int getX() {
