@@ -50,7 +50,7 @@ public class Player {
 	public void move() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please input a direction: ");
+		System.out.println(name + ", please input a direction: ");
 		System.out.println("(up,down,right,left)");
 		
 		while(true) {
@@ -92,7 +92,7 @@ public class Player {
 	public boolean fight() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Do you want to fight or run?");
+		System.out.println(name + ", do you want to fight or run?");
 		System.out.println("(fight,run)");
 		
 		while(true) {

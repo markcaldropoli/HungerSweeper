@@ -38,6 +38,7 @@ public class PlayerManager {
 			String p = getRandomFirstName();
 			players.add(new Computer(p));
 		}
+		checkSame();
 		reader.close();
 	}
 
@@ -65,7 +66,27 @@ public class PlayerManager {
 			System.out.println(players.get(i).getName());
 		}
 	}
-
+	
+	public void checkSame(){
+		for(int i = 0; i < players.size(); i++){
+			for(int j = 0; j < players.size(); i++){
+				if(players.get(i).getX() == players.get(j).getX()){
+					if(players.get(i).getY() == players.get(j).getY()){
+						int whoMove = (int) Math.random() * 2;
+						if(whoMove == 0){
+							System.out.println(players.get(i).getName() + " you've started at the same place as another player!");
+							players.get(i).move();
+						}
+						if(whoMove == 1){
+							System.out.println(players.get(j).getName() + " you've started at the same place as another player!");
+							players.get(j).move();
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	public void move(){
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).move();
