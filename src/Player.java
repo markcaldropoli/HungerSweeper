@@ -87,7 +87,6 @@ public class Player {
 	public boolean fight() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("You have encounted another player!");
 		System.out.println("Do you want to fight or run?");
 		System.out.println("(fight,run)");
 		
@@ -102,15 +101,7 @@ public class Player {
 	public static void main(String[] args) {
 		Player p1 = new Player("Mark");
 		Player p2 = new Player("Marc");
-		Player p3 = new Player("Logen");
-		p1.setX(5);
-		p1.setY(5);
-		p2.setX(1);
-		p2.setY(1);
-		p3.setX(14);
-		p3.setY(14);
-		p2.move();
-		p3.move();
-		p3.fight();
+		PlayerManager p = new PlayerManager();
+		p.fight(p1, p2);
 	}
 }

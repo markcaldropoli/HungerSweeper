@@ -88,18 +88,25 @@ public class PlayerManager {
 			boolean two = b.fight();
 			if(one == false && two == false){
 				System.out.println("You both ran!");
+				int whoMove = (int) Math.random() * 2;
+				if(whoMove == 0)
+					a.move();
+				if(whoMove == 1)
+					b.move();
 				break;
 			}
 			if(one == true){
 				System.out.println(a.getName() + " punches " + b.getName() + " in the face!");
 				int damage = (int) (Math.random() * 20 + 1);
-				System.out.println(b.getName() + " takes " + damage + " damage!");
+				System.out.println(b.getName() + " takes " + damage + " pts damage!");
 				b.setHealth(b.getHealth() - damage);
+				System.out.println(b.getHealth());
 			}
 			if(one == false){
 				int chance = (int) (Math.random() * 5);
 				if(chance == 0){
 					System.out.println(a.getName() + " has ran!");
+					a.move();
 					break;
 				}
 				else{
@@ -109,13 +116,15 @@ public class PlayerManager {
 			if(two == true){
 				System.out.println(b.getName() + " punches " +a.getName() + " in the face!");
 				int damage = (int) (Math.random() * 20 + 1);
-				System.out.println(a.getName() + " takes " + damage + "pts of damage!");
+				System.out.println(a.getName() + " takes " + damage + " pts of damage!");
 				a.setHealth(a.getHealth() - damage);
+				System.out.println(a.getHealth());
 			}
 			if(two == false){
 				int chance = (int) (Math.random() * 5);
 				if(chance == 0){
 					System.out.println(a.getName() + " has ran!");
+					b.move();
 					break;
 				}
 				else{
