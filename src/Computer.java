@@ -73,6 +73,14 @@ public class Computer extends Player {
 		}
 	}
 	
+	public boolean fight() {
+		Random random = new Random();
+		int rand = random.nextInt(2);
+		
+		if(rand == 0) return true;
+		else return false;
+	}
+	
 	public static void main(String[] args) {
 		Computer p1 = new Computer("Mark");
 		Computer p2 = new Computer("Marc");
