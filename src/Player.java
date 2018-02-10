@@ -109,6 +109,7 @@ public class Player {
 		p2.setY(1);
 		p3.setX(14);
 		p3.setY(14);
+		p2.move();
 		p3.move();
 		p3.fight();
 	}
