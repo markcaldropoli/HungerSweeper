@@ -43,6 +43,7 @@ public class Player {
 	}
 
 	public void move() {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please input a direction: ");
 		System.out.println("(up,down,right,left)");
@@ -78,10 +79,24 @@ public class Player {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else {
-				System.out.println("Please enter a valid direction.");
+				System.out.println("Please enter a valid direction. (up,down,right,left)");
 			}
 		}
-		sc.close();
+	}
+	
+	public boolean fight() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		System.out.println("You have encounted another player!");
+		System.out.println("Do you want to fight or run?");
+		System.out.println("(fight,run)");
+		
+		while(true) {
+			String decision = sc.nextLine();
+			if(decision.equalsIgnoreCase("fight")) return true;
+			else if(decision.equalsIgnoreCase("run")) return false;
+			else System.out.println("Quick! Pick one of the two decisions! (fight,run)");
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -95,5 +110,6 @@ public class Player {
 		p3.setX(14);
 		p3.setY(14);
 		p3.move();
+		p3.fight();
 	}
 }
