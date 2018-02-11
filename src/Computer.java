@@ -5,6 +5,7 @@ public class Computer extends Player {
 	private int y;
 	private String name;
 	private int health = 100;
+	private int boundary = 6;
 	
 	public Computer(String name) {
 		super(name);
@@ -47,6 +48,14 @@ public class Computer extends Player {
 		this.health = health;
 	}
 
+	public int getBoundary() {
+		return boundary;
+	}
+
+	public void setBoundary(int boundary) {
+		this.boundary = boundary;
+	}
+
 	public void move() {
 		while(true) {
 			//random # 0=up, 1=down, 2=right, 3=left
@@ -54,22 +63,22 @@ public class Computer extends Player {
 			int rand = random.nextInt(4);
 			
 			if(rand == 0) {
-				if(this.getX() >= 0 && this.getX() < 6 && this.getY()-1 >= 0 && this.getY()-1 < 6) {
+				if(this.getX() >= 0 && this.getX() < boundary && this.getY()-1 >= 0 && this.getY()-1 < boundary) {
 					y--;
 					break;
 				}
 			} else if(rand == 1) {
-				if(this.getX() >= 0 && this.getX() < 6 && this.getY()+1 >= 0 && this.getY()+1 < 6) {
+				if(this.getX() >= 0 && this.getX() < boundary && this.getY()+1 >= 0 && this.getY()+1 < boundary) {
 					y++;
 					break;
 				}
 			} else if(rand == 2) {
-				if(this.getX()+1 >= 0 && this.getX()+1 < 6 && this.getY() >= 0 && this.getY() < 6) {
+				if(this.getX()+1 >= 0 && this.getX()+1 < boundary && this.getY() >= 0 && this.getY() < boundary) {
 					x++;
 					break;
 				}
 			} else if(rand == 3) {
-				if(this.getX()-1 >= 0 && this.getX()-1 < 6 && this.getY() >= 0 && this.getY() < 6) {
+				if(this.getX()-1 >= 0 && this.getX()-1 < boundary && this.getY() >= 0 && this.getY() < boundary) {
 					x--;
 					break;
 				}

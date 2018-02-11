@@ -7,7 +7,7 @@ public class PlayerManager {
 	private static Random ranGen = new Random();
 	private ArrayList<Traps> traps = new ArrayList<>();
 	
-	public void setTraps(){
+	public void setTraps() {
 		Traps banana = new Traps("slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head!", 20, false);
 		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot?", "Put a rock on your foot then move it?", "The mine doesn't go off", "The mine explodes under you!", 50, false);
 		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to climb out?", "Try to stomp on the ants?", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true);
@@ -34,54 +34,52 @@ public class PlayerManager {
 	
 	public void removeTrap(Traps a) {
 		int i;
-		for(i = 0; i < traps.size(); i++){
-			if(traps.get(i).getDescription() == a.getDescription())
-				break;
+		for(i = 0; i < traps.size(); i++) {
+			if(traps.get(i).getDescription() == a.getDescription()) break;
 		}
 		players.remove(i);
 	}
 
-	public void addPlayer(){
+	public void addPlayer() {
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
 		int n = 0, c = 0;
-		while(true){
+		while(true) {
 			System.out.println("The maximum amount of players is 12.");
 			System.out.println("How many human players are there going to be?");
 			n = reader.nextInt();
 			reader.nextLine();
-			if(n > 12)
-				continue;
-			break;}
-		for(int i = 1; i < n+1; i++){
+			if(n > 12) continue;
+			break;
+		}
+		
+		for(int i = 1; i < n+1; i++) {
 			System.out.println("What is Player " + i + "'s name?");
 			String p = reader.nextLine();
 			players.add(new Player(p));
 		}
-		while(true){
-			if(n == 12){
-				break;
-			}
+		
+		while(true) {
+			if(n == 12) break;
 			System.out.println("The maximum amount of players is 12. You have " + players.size() + " players so far.");
 			System.out.println("How many computer players are there going to be?");
 			c = reader.nextInt();
-			if((c + n) > 12){
-				continue;
-			}
+			if((c + n) > 12) continue;
 			break;
 		}
-		for(int i = 0; i < c; i++){	
+		
+		for(int i = 0; i < c; i++) {	
 			String p = getRandomFirstName();
 			players.add(new Computer(p));
 		}
+		
 		checkSame();
 	}
 
 	public void removePlayer(String name) {
 		int i;
-		for(i = 0; i < players.size(); i++){
-			if(players.get(i).getName() == name)
-				break;
+		for(i = 0; i < players.size(); i++) {
+			if(players.get(i).getName() == name) break;
 		}
 		players.remove(i);
 	}
@@ -96,23 +94,33 @@ public class PlayerManager {
 		return name;
 	}
 
-	public void printPlayers(){
-		for(int i = 0; i < players.size(); i++){
+	public void printPlayers() {
+		for(int i = 0; i < players.size(); i++) {
 			System.out.println(players.get(i).getName() + "(" + players.get(i).getHealth() + ")");
+		}
+		
+		update();
+	}
+	
+	public void update() {
+		if(players.size() <= 5 && players.get(0).getBoundary() != 3) {
+			for(int i = 0; i < players.size(); i++) {
+				players.get(i).setBoundary(3);
+			}
 		}
 	}
 	
-	public void checkSame(){
-		for(int i = 0; i < players.size(); i++){
-			for(int j = i+1; j < players.size(); j++){
-				if(players.get(i).getX() == players.get(j).getX()){
-					if(players.get(i).getY() == players.get(j).getY()){
+	public void checkSame() {
+		for(int i = 0; i < players.size(); i++) {
+			for(int j = i+1; j < players.size(); j++) {
+				if(players.get(i).getX() == players.get(j).getX()) {
+					if(players.get(i).getY() == players.get(j).getY()) {
 						int whoMove = (int) Math.random() * 2;
-						if(whoMove == 0){
+						if(whoMove == 0) {
 							System.out.println(players.get(i).getName() + " you've started at the same place as another player!");
 							players.get(i).move();
 						}
-						if(whoMove == 1){
+						if(whoMove == 1) {
 							System.out.println(players.get(j).getName() + " you've started at the same place as another player!");
 							players.get(j).move();
 						}
@@ -122,23 +130,23 @@ public class PlayerManager {
 		}
 	}
 	
-	public void move(){
-		for(int i = 0; i < players.size(); i++){
+	public void move() {
+		for(int i = 0; i < players.size(); i++) {
 			players.get(i).move();
-			for(int j = 0; j < traps.size(); j++){
-				if(players.get(i).getX() == traps.get(j).getX()){
-					if(players.get(i).getY() == traps.get(j).getY()){
-						if(traps.get(j).caughtTrap(players.get(i))){
+			for(int j = 0; j < traps.size(); j++) {
+				if(players.get(i).getX() == traps.get(j).getX()) {
+					if(players.get(i).getY() == traps.get(j).getY()) {
+						if(traps.get(j).caughtTrap(players.get(i))) {
 							removePlayer(players.get(i).getName());
 						}
 					}
 				}
 			}
 		}
-		for(int i = 0; i < players.size(); i++){
-			for(int j = i+1; j < players.size(); j++){
-				if(players.get(i).getX() == players.get(j).getX()){
-					if(players.get(i).getY() == players.get(j).getY()){
+		for(int i = 0; i < players.size(); i++) {
+			for(int j = i+1; j < players.size(); j++) {
+				if(players.get(i).getX() == players.get(j).getX()) {
+					if(players.get(i).getY() == players.get(j).getY()) {
 						fight(players.get(i), players.get(j));
 					}
 				}
@@ -150,26 +158,24 @@ public class PlayerManager {
 		return players;
 	}
 
-	public void fight(Player a, Player b){
+	public void fight(Player a, Player b) {
 		System.out.println("Two players have encountered each other! " + a.getName() + " and " + b.getName() + ", it's time to rumble!");
-		while(a.getHealth() > 0 && b.getHealth() > 0){
+		while(a.getHealth() > 0 && b.getHealth() > 0) {
 			boolean one = a.fight();
 			boolean two = b.fight();
-			if(one == false && two == false){
+			if(one == false && two == false) {
 				System.out.println("You both ran!");
 				int whoMove = (int) Math.random() * 2;
-				if(whoMove == 0)
-					a.move();
-				if(whoMove == 1)
-					b.move();
+				if(whoMove == 0) a.move();
+				if(whoMove == 1) b.move();
 				break;
 			}
-			if(one == true){
+			if(one == true) {
 				System.out.println(a.getName() + " punches " + b.getName() + " in the face!");
 				int damage = (int) (Math.random() * 20 + 1);
 				System.out.println(b.getName() + " takes " + damage + " pts damage!");
 				b.setHealth(b.getHealth() - damage);
-				if(b.getHealth() <= 0){
+				if(b.getHealth() <= 0) {
 					System.out.println("---------------------------");
 					System.out.println(a.getName() + " killed " + b.getName() + "!");
 					System.out.println("---------------------------");
@@ -178,23 +184,23 @@ public class PlayerManager {
 				}
 				System.out.println(b.getName() + " has " + b.getHealth() + " health left!");
 			}
-			if(one == false){
+			if(one == false) {
 				int chance = (int) (Math.random() * 5);
-				if(chance == 0){
+				if(chance == 0) {
 					System.out.println(a.getName() + " has ran!");
 					a.move();
 					break;
 				}
-				else{
+				else {
 					System.out.println(a.getName() + " couldn't get away!");
 				}
 			}
-			if(two == true){
+			if(two == true) {
 				System.out.println(b.getName() + " punches " +a.getName() + " in the face!");
 				int damage = (int) (Math.random() * 20 + 1);
 				System.out.println(a.getName() + " takes " + damage + " pts of damage!");
 				a.setHealth(a.getHealth() - damage);
-				if(a.getHealth() <= 0){
+				if(a.getHealth() <= 0) {
 					System.out.println("---------------------------");
 					System.out.println(b.getName() + " killed " + a.getName() + "!");
 					System.out.println("---------------------------");
@@ -203,14 +209,14 @@ public class PlayerManager {
 				}
 				System.out.println(a.getName() + " has " + a.getHealth() + " health left!");
 			}
-			if(two == false){
+			if(two == false) {
 				int chance = (int) (Math.random() * 5);
-				if(chance == 0){
+				if(chance == 0) {
 					System.out.println(b.getName() + " has ran!");
 					b.move();
 					break;
 				}
-				else{
+				else {
 					System.out.println(b.getName() + " couldn't get away!");
 				}
 			}

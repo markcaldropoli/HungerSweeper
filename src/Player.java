@@ -7,6 +7,7 @@ public class Player {
 	private int y;
 	private String name;
 	private int health = 100;
+	private int boundary = 6;
 	
 	public Player(String name) {
 		this.name = name;
@@ -47,6 +48,14 @@ public class Player {
 		this.health = health;
 	}
 
+	public int getBoundary() {
+		return boundary;
+	}
+
+	public void setBoundary(int boundary) {
+		this.boundary = boundary;
+	}
+
 	public void move() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -56,28 +65,28 @@ public class Player {
 		while(true) {
 			String mov = sc.nextLine();
 			if(mov.equalsIgnoreCase("up")) {
-				if(this.getX() >= 0 && this.getX() < 6 && this.getY()-1 >= 0 && this.getY()-1 < 6) {
+				if(this.getX() >= 0 && this.getX() < boundary && this.getY()-1 >= 0 && this.getY()-1 < boundary) {
 					y--;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("down")) {
-				if(this.getX() >= 0 && this.getX() < 6 && this.getY()+1 >= 0 && this.getY()+1 < 6) {
+				if(this.getX() >= 0 && this.getX() < boundary && this.getY()+1 >= 0 && this.getY()+1 < boundary) {
 					y++;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("right")) {
-				if(this.getX()+1 >= 0 && this.getX()+1 < 6 && this.getY() >= 0 && this.getY() < 6) {
+				if(this.getX()+1 >= 0 && this.getX()+1 < boundary && this.getY() >= 0 && this.getY() < boundary) {
 					x++;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("left")) {
-				if(this.getX()-1 >= 0 && this.getX()-1 < 6 && this.getY() >= 0 && this.getY() < 6) {
+				if(this.getX()-1 >= 0 && this.getX()-1 < boundary && this.getY() >= 0 && this.getY() < boundary) {
 					x--;
 					break;
 				} else {
