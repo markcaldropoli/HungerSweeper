@@ -5,7 +5,7 @@ public class Computer extends Player {
 	private int y;
 	private String name;
 	private int health = 100;
-	private int boundary = 6;
+	private int boundary = 5;
 	private boolean isPlayer = false;
 	
 	public Computer(String name) {
@@ -13,8 +13,8 @@ public class Computer extends Player {
 		this.name = name;
 		
 		Random random = new Random();
-		this.x = random.nextInt(6);
-		this.y = random.nextInt(6);
+		this.x = random.nextInt(5);
+		this.y = random.nextInt(5);
 	}
 	
 	public int getX() {
@@ -90,7 +90,7 @@ public class Computer extends Player {
 	public boolean fight(Player a) {
 		Random random = new Random();
 		if(health - a.getHealth() <= -20){
-			int rand = random.nextInt(6);
+			int rand = random.nextInt(5);
 			if(rand == 0) return true;
 			else return false;		
 		}
@@ -110,7 +110,7 @@ public class Computer extends Player {
 			else return true;
 		}
 		else if(health - a.getHealth() >= 20){
-			int rand = random.nextInt(6);
+			int rand = random.nextInt(5);
 			if(rand == 0) return false;
 			else return true;	
 		}

@@ -9,22 +9,22 @@ public class PlayerManager {
 	private ArrayList<String> names = new ArrayList<>();
 
 	public void setTraps() {
-		Traps banana = new Traps("you slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head!", 20, false, 6);
-		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot?", "Put a rock to replace your foot and then move it?", "The mine doesn't go off", "The mine explodes under you!", 50, false, 6);
-		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to climb out?", "Try to stomp on the ants?", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true, 6);
-		Traps avalance = new Traps("an avalance is coming down towards you!", "Run away?", "Hide behind a tree?", "You can't outrun the avalance and get crushed", "The tree blocks the debris!", 40, true, 6);
-		Traps apple = new Traps("you see an apple in a tree!", "Try to climb the tree to get it?", "Ignore it?", "You fall on the ground, unable to grab an apple", "You continue on your merry way!", 5, true, 6);
-		Traps panther = new Traps("you encounter a wild panther!", "Run away", "Try to pet it?", "The panther catches you and takes a bite?", "The panther purrs and leaves you alone!", 30, true, 6);
-		Traps quicksand = new Traps("you've stepped in quicksand!", "Struggle", "Let it take you?", "You get sucked in and suffocate before finally escaping?", "The quicksand peacefully spits you out!", 15, true, 6);
-		Traps arrow = new Traps("you've stepped on a pressure plate and see an arrow about to fly towards you!", "Duck?", "Try to catch it?", "It passes over your head!", "Why would you try to catch it and not duck? The arrow righty goes through your hand.", 25, false, 6);
+		Traps banana = new Traps("you slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head!", 20, false, 5);
+		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot?", "Put a rock to replace your foot and then move it?", "The mine doesn't go off", "The mine explodes under you!", 50, false, 5);
+		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to climb out?", "Try to stomp on the ants?", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true, 5);
+		Traps avalance = new Traps("an avalance is coming down towards you!", "Run away?", "Hide behind a tree?", "You can't outrun the avalance and get crushed", "The tree blocks the debris!", 40, true, 5);
+		Traps apple = new Traps("you see an apple in a tree!", "Try to climb the tree to get it?", "Ignore it?", "You fall on the ground, unable to grab an apple", "You continue on your merry way!", 5, true, 5);
+		Traps panther = new Traps("you encounter a wild panther!", "Run away", "Try to pet it?", "The panther catches you and takes a bite?", "The panther purrs and leaves you alone!", 30, true, 5);
+		Traps quicksand = new Traps("you've stepped in quicksand!", "Struggle", "Let it take you?", "You get sucked in and suffocate before finally escaping?", "The quicksand peacefully spits you out!", 15, true, 5);
+		Traps arrow = new Traps("you've stepped on a pressure plate and see an arrow about to fly towards you!", "Duck?", "Try to catch it?", "It passes over your head!", "Why would you try to catch it and not duck? The arrow righty goes through your hand.", 25, false, 5);
 		Traps button = new Traps("you see a button atop a pedestal with a neon sign above it that says DON'T PRESS!", "Press it?", "Don't press it?", "Acid sprays from the pedestal and burns your arm!", "Nice self control.", 45, true, 3);
-		Miracle pool = new Miracle("you see a murky lake spread out in front of you.", "Go for a swim?", "Stay away?", "The pool rejuvinates you.", "You walk away from the pool.", 15, true, 6);
+		Miracle pool = new Miracle("you see a murky lake spread out in front of you.", "Go for a swim?", "Stay away?", "The pool rejuvinates you.", "You walk away from the pool.", 15, true, 5);
 		Miracle button2 = new Miracle("you see a button atop a pedestal with a neon sign above it that says DON'T PRESS!", "Press it?", "Don't press it?", "An angelic light shines upon you and rejuivantes your health.", "Nice self control.", 45, true, 3);
-		Traps shed = new Traps("you see a suuply shed in the middle of a clearing!", "Go inside?", "Leave it alone?", "The shed is filled with snakes and you get bitten!", "You leave the shed alone. Aren't you curious?", 10, true, 6);
+		Traps shed = new Traps("you see a suuply shed in the middle of a clearing!", "Go inside?", "Leave it alone?", "The shed is filled with snakes and you get bitten!", "You leave the shed alone. Aren't you curious?", 10, true, 5);
 		Miracle shed2 = new Miracle("you see a suuply shed in the middle of a clearing!", "Go inside?", "Leave it alone?", "The shed holds medical supplies and you heal yourself with them!", "You leave the shed alone. Aren't you curious?", 10, true, 3);
-		Traps bearTrap = new Traps("a bear trap blocks your path!", "Carefully explain to it that you are not a bear?", "Carefully step around it?", "The bear trap disappears!", "You slip and get caught anyway!", 20, false, 6);
-		Miracle tangerine = new Miracle("you find a tangerine on the ground!", "Throw it away?", "Eat it?","You throw the tangerine and it lands with a sad thud. It feels rejected.", "The tangerine makes you feel better!",  10, false, 6);
-		Traps sawblades = new Traps("you've stepped on a pressure plate and sawblades approach on either side of you!", "Jump backward?", "Jump forward?", "You manage to dodge the blades!", "You barely manage to dodge but a blade cuts your leg", 35, false, 6);
+		Traps bearTrap = new Traps("a bear trap blocks your path!", "Carefully explain to it that you are not a bear?", "Carefully step around it?", "The bear trap disappears!", "You slip and get caught anyway!", 20, false, 5);
+		Miracle tangerine = new Miracle("you find a tangerine on the ground!", "Throw it away?", "Eat it?","You throw the tangerine and it lands with a sad thud. It feels rejected.", "The tangerine makes you feel better!",  10, false, 5);
+		Traps sawblades = new Traps("you've stepped on a pressure plate and sawblades approach on either side of you!", "Jump backward?", "Jump forward?", "You manage to dodge the blades!", "You barely manage to dodge but a blade cuts your leg", 35, false, 5);
 		if(players.size() <= 5){
 			traps.add(button);
 			traps.add(button2);
@@ -53,7 +53,7 @@ public class PlayerManager {
 		traps.clear();
 		Traps button = new Traps("you see a button atop a pedestal with a neon sign above it that says DON'T PRESS!", "Press it?", "Don't press it?", "Acid sprays from the pedestal and burns your arm!", "Nice self control.", 45, true, 3);
 		Miracle button2 = new Miracle("you see a button atop a pedestal with a neon sign above it that says DON'T PRESS!", "Press it?", "Don't press it?", "An angelic light shines upon you and rejuivantes your health.", "Nice self control.", 45, true, 3);
-		Traps shed = new Traps("you see a suuply shed in the middle of a clearing!", "Go inside?", "Leave it alone?", "The shed is filled with snakes and you get bitten!", "You leave the shed alone. Aren't you curious?", 10, true, 6);
+		Traps shed = new Traps("you see a suuply shed in the middle of a clearing!", "Go inside?", "Leave it alone?", "The shed is filled with snakes and you get bitten!", "You leave the shed alone. Aren't you curious?", 10, true, 5);
 		Miracle shed2 = new Miracle("you see a suuply shed in the middle of a clearing!", "Go inside?", "Leave it alone?", "The shed holds medical supplies and you heal yourself with them!", "You leave the shed alone. Aren't you curious?", 10, true, 3);
 		traps.add(button);
 		traps.add(button2);
