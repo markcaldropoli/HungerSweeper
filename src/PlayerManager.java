@@ -123,6 +123,13 @@ public class PlayerManager {
 	public void move(){
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).move();
+			for(int j = 0; j < traps.size(); i++){
+				if(players.get(i).getX() == traps.get(j).getX()){
+					if(players.get(i).getY() == traps.get(j).getY()){
+						Trap(players.get(i), traps.get(j));
+					}
+				}
+			}
 		}
 		for(int i = 0; i < players.size(); i++){
 			for(int j = 0; j < players.size(); i++){
@@ -133,6 +140,10 @@ public class PlayerManager {
 				}
 			}
 		}
+	}
+
+	public ArrayList<Player> getPlayers() {
+		return players;
 	}
 
 	public void fight(Player a, Player b){
