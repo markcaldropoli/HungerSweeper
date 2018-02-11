@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Traps {
 	String description;
@@ -51,6 +52,38 @@ public class Traps {
 				}
 			}
 		}
+	}
+	public boolean caughtTrap(Player a){
+		@SuppressWarnings("resource")
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Oh no, " + a.getName() + ", " + description + "\nDo you?:\n1. " + choice1 + "\n2. " + choice2 + "\n(Type 1 or 2)");
+		int n = reader.nextInt();
+		if(n == 1){
+			System.out.println(answer1);
+			if(answer){
+				System.out.println("You take " + healthLoss + " points of damage!");
+				a.setHealth(a.getHealth() - healthLoss);
+			}
+		}
+		if(n == 2){
+			System.out.println(answer2);
+			if(!(answer)){
+				System.out.println("You take " + healthLoss + " points of damage!");
+				a.setHealth(a.getHealth() - healthLoss);
+			}
+		}
+		if(a.getHealth() <= 0){
+			System.out.println("---------------------------");
+			System.out.println(a.getName() + " has died!");
+			System.out.println("---------------------------");
+			return true;
+		}
+		else{
+			System.out.println(a.getName() + " has " + a.getHealth() + " health left!");
+		}
+		x = -1;
+		y = -1;
+		return false;
 	}
 	public String getDescription() {
 		return description;
