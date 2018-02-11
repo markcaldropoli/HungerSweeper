@@ -57,28 +57,28 @@ public class Player {
 		while(true) {
 			String mov = sc.nextLine();
 			if(mov.equalsIgnoreCase("up")) {
-				if(this.getX() > 0 && this.getX() < 6 && this.getY()-1 > 0 && this.getY()-1 < 6) {
+				if(this.getX() >= 0 && this.getX() < 6 && this.getY()-1 >= 0 && this.getY()-1 < 6) {
 					y--;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("down")) {
-				if(this.getX() > 0 && this.getX() < 6 && this.getY()+1 > 0 && this.getY()+1 < 6) {
+				if(this.getX() >= 0 && this.getX() < 6 && this.getY()+1 >= 0 && this.getY()+1 < 6) {
 					y++;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("right")) {
-				if(this.getX()+1 > 0 && this.getX()+1 < 6 && this.getY() > 0 && this.getY() < 6) {
+				if(this.getX()+1 >= 0 && this.getX()+1 < 6 && this.getY() >= 0 && this.getY() < 6) {
 					x++;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("left")) {
-				if(this.getX()-1 > 0 && this.getX()-1 < 6 && this.getY() > 0 && this.getY() < 6) {
+				if(this.getX()-1 >= 0 && this.getX()-1 < 6 && this.getY() >= 0 && this.getY() < 6) {
 					x--;
 					break;
 				} else {
