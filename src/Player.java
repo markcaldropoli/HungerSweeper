@@ -1,6 +1,9 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/* 
+ * Mark Caldropoli & Marc Shelton
+ */
 
 public class Player {
 	private int x;

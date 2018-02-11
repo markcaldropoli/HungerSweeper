@@ -1,3 +1,7 @@
+/* 
+ * Mark Caldropoli & Marc Shelton
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 

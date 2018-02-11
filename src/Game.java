@@ -1,3 +1,7 @@
+/* 
+ * Mark Caldropoli & Marc Shelton
+ */
+
 public class Game {
 	public static void main(String[] args){
 		System.out.println("Welcome to the Arena! Watch your step for there are both traps and miracles hidden within this 6x6 battle stadium!");
