@@ -86,41 +86,38 @@ public class Computer extends Player {
 		}
 	}
 	
-	public boolean fight() {
+	public boolean fight(Player a) {
 		Random random = new Random();
-		int rand = random.nextInt(2);
-		
-		if(rand == 0) return true;
-		else return false;
+		if(health - a.getHealth() <= -20){
+			int rand = random.nextInt(4);
+			if(rand == 0) return true;
+			else return false;		
+		}
+		else if(health - a.getHealth() <= -10){
+			int rand = random.nextInt(3);
+			if(rand == 0) return true;
+			else return false;
+		}
+		else if(health - a.getHealth() >= 0 && health - a.getHealth() <- 9){
+			int rand = random.nextInt(2);
+			if(rand == 0) return true;
+			else return false;	
+		}
+		else if(health - a.getHealth() >= 10){
+			int rand = random.nextInt(3);
+			if(rand == 0) return false;
+			else return true;
+		}
+		else if(health - a.getHealth() >= 20){
+			int rand = random.nextInt(4);
+			if(rand == 0) return false;
+			else return true;	
+		}
+		return false;
 	}
 	
 	public boolean caughtTrap(Traps a){
 		return a.caughtTrap(this, false);
 	}
-	
-	public static void main(String[] args) {
-		Computer p1 = new Computer("Mark");
-		Computer p2 = new Computer("Marc");
-		Computer p3 = new Computer("Logen");
-		p1.setX(5);
-		p1.setY(5);
-		p2.setX(1);
-		p2.setY(1);
-		p3.setX(14);
-		p3.setY(14);
-		
-		for(int i = 0; i < 10; i++) {
-			System.out.println(p1.getName() + " " + p1.getX() + " " + p1.getY());
-			p1.move();
-			System.out.println(p1.getName() + " " + p1.getX() + " " + p1.getY());
-
-			System.out.println(p2.getName() + " " + p2.getX() + " " + p2.getY());
-			p2.move();
-			System.out.println(p2.getName() + " " + p2.getX() + " " + p2.getY());
-			
-			System.out.println(p3.getName() + " " + p3.getX() + " " + p3.getY());
-			p3.move();
-			System.out.println(p3.getName() + " " + p3.getX() + " " + p3.getY());
-		}
-	}
 }
+	

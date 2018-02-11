@@ -11,42 +11,43 @@ public class Traps {
 	String answer2;
 	int healthLoss;
 	boolean answer;
-	public Traps(String description, String choice1, String choice2, String answer1, String answer2, int healthLoss, boolean answer) {
+	int range;
+	public Traps(String description, String choice1, String choice2, String answer1, String answer2, int healthLoss, boolean answer, int r) {
 		super();
 		this.description = description;
 		Random random = new Random();
-		this.x = random.nextInt(6);
-		this.y = random.nextInt(6);
+		this.x = random.nextInt(r);
+		this.y = random.nextInt(r);
 		this.choice1 = choice1;
 		this.choice2 = choice2;
 		this.answer1 = answer1;
 		this.answer2 = answer2;
 		this.healthLoss = healthLoss;
 		this.answer = answer;
+		this.range = r;
 	}
 	public void move() {
 		while(true) {
-			//random # 0=up, 1=down, 2=right, 3=left
 			Random random = new Random();
 			int rand = random.nextInt(4);
 
 			if(rand == 0) {
-				if(this.getX() > 0 && this.getX() < 8 && this.getY()-1 > 0 && this.getY()-1 < 8) {
+				if(this.getX() > 0 && this.getX() < 8 && this.getY()-1 > 0 && this.getY()-1 < range) {
 					y--;
 					break;
 				}
 			} else if(rand == 1) {
-				if(this.getX() > 0 && this.getX() < 8 && this.getY()+1 > 0 && this.getY()+1 < 8) {
+				if(this.getX() > 0 && this.getX() < 8 && this.getY()+1 > 0 && this.getY()+1 < range) {
 					y++;
 					break;
 				}
 			} else if(rand == 2) {
-				if(this.getX()+1 > 0 && this.getX()+1 < 8 && this.getY() > 0 && this.getY() < 8) {
+				if(this.getX()+1 > 0 && this.getX()+1 < 8 && this.getY() > 0 && this.getY() < range) {
 					x++;
 					break;
 				}
 			} else if(rand == 3) {
-				if(this.getX()-1 > 0 && this.getX()-1 < 8 && this.getY() > 0 && this.getY() < 8) {
+				if(this.getX()-1 > 0 && this.getX()-1 < 8 && this.getY() > 0 && this.getY() < range) {
 					x--;
 					break;
 				}
@@ -58,6 +59,7 @@ public class Traps {
 			@SuppressWarnings("resource")
 			Scanner reader = new Scanner(System.in);
 			int n = 0;
+			System.out.println("---------------------------");
 			System.out.println("Oh no, " + a.getName() + ", " + description + "\nDo you?:\n1. " + choice1 + "\n2. " + choice2 + "\n(Type 1 or 2)");
 			while(!reader.hasNextInt()) {
 				reader.next();
@@ -87,13 +89,13 @@ public class Traps {
 				}
 			}
 			if(a.getHealth() <= 0){
-				System.out.println("---------------------------");
 				System.out.println(a.getName() + " has died!");
 				System.out.println("---------------------------");
 				return true;
 			}
 			else{
 				System.out.println(a.getName() + " has " + a.getHealth() + " health left!");
+				System.out.println("---------------------------");
 			}
 			x = -1;
 			y = -1;
@@ -125,6 +127,7 @@ public class Traps {
 			}
 			else{
 				System.out.println(a.getName() + " has " + a.getHealth() + " health left!");
+				System.out.println("---------------------------");
 			}
 			x = -1;
 			y = -1;

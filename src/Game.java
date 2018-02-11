@@ -6,8 +6,18 @@ public class Game {
 		pm.setTraps();
 		while(pm.getPlayers().size() != 1) {
 			pm.update();
+			if(pm.getPlayers().size() == 1){
+				break;
+			}
 			pm.move();
+			System.out.println("---------------------------");
 			pm.printPlayers();
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("---------------------------");
 		}
 		System.out.println("Congratulations! " + pm.getPlayers().get(0).getName() + ", you've won!!!!!!!");
 	}
