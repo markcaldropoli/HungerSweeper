@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class PlayerManager {
 	private ArrayList<Player> players = new ArrayList<>();
@@ -45,6 +46,16 @@ public class PlayerManager {
 				a.setHealth(a.getHealth() - b.getHealthLoss());
 			}
 		}
+		removeTrap(b);
+	}
+	
+	public void removeTrap(Traps a) {
+		int i;
+		for(i = 0; i < traps.size(); i++){
+			if(traps.get(i).getDescription() == a.getDescription())
+				break;
+		}
+		players.remove(i);
 	}
 
 	public void addPlayer(){
@@ -102,10 +113,11 @@ public class PlayerManager {
 		return name;
 	}
 
-	public void printPlayers(){
+	public void printPlayers() throws InterruptedException{
 		for(int i = 0; i < players.size(); i++){
-			System.out.println(players.get(i).getName());
+			System.out.println(players.get(i).getName() + "(" + players.get(i).getHealth() + ")");
 		}
+		TimeUnit.SECONDS.sleep(2);
 	}
 	
 	public void checkSame(){
