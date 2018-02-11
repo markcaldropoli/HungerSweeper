@@ -5,6 +5,15 @@ import java.util.Scanner;
 public class PlayerManager {
 	private ArrayList<Player> players = new ArrayList<>();
 	private static Random ranGen = new Random();
+	private ArrayList<Traps> traps = new ArrayList<>();
+	
+	public void setTraps(){
+		Traps banana = new Traps("slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head.", 20, "banana", false);
+		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot", "Put a rock on your foot then move it.", "The mine doesn't go off", "The mine explodes under you", 50, "mine", false);
+		Traps pit = new Traps("you fall into a pit that holds a sword", "Try to clinb out with the sword", "Try to climb out with your hands", "Your hand slips and you cut yourself", "You sucessfully escape!", 15, "sword", true);
+		Traps avalance = new Traps("an avalance is coming down towards you", "Run away", "Hide behind a tree", "You can't outrun the avalance and get crushed", "The tree blocks the debris.", 30, "snowball", true);
+		Traps apple = new Traps("you see an apple in a tree", "Try to climb the tree to get it", "Wait for it to fall?", "You manage to sucessfully grab the apple", "The apple falls onto your face", 5, "apple", false);
+	}
 
 	public void addPlayer(){
 		Scanner reader = new Scanner(System.in);

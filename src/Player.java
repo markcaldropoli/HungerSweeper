@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Player {
 	private int x;
 	private int y;
@@ -9,7 +10,6 @@ public class Player {
 	
 	public Player(String name) {
 		this.name = name;
-		
 		Random random = new Random();
 		this.x = random.nextInt(15);
 		this.y = random.nextInt(15);
