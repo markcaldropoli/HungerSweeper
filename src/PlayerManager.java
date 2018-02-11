@@ -376,6 +376,7 @@ public class PlayerManager {
 	}
 
 		public void endFight(Player a, Player b){
+			System.out.println("---------------------------");
 			System.out.println("It's time for the final fight! " + a.getName() + " and " + b.getName() + ", it's the final showdown!");
 			while(a.getHealth() > 0 && b.getHealth() > 0) {
 				System.out.println("---------------------------");
