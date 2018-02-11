@@ -185,7 +185,7 @@ public class PlayerManager {
 				int damage = (int) (Math.random() * 20 + 1);
 				System.out.println(b.getName() + " takes " + damage + " pts damage!");
 				b.setHealth(b.getHealth() - damage);
-				if(b.getHealth() < 0){
+				if(b.getHealth() <= 0){
 					System.out.println(a.getName() + "  killed " + b.getName() + "!");
 					removePlayer(b.getName());
 					break;
@@ -208,7 +208,7 @@ public class PlayerManager {
 				int damage = (int) (Math.random() * 20 + 1);
 				System.out.println(a.getName() + " takes " + damage + " pts of damage!");
 				a.setHealth(a.getHealth() - damage);
-				if(a.getHealth() < 0){
+				if(a.getHealth() <= 0){
 					System.out.println(b.getName() + "  killed " + a.getName() + "!");
 					removePlayer(a.getName());
 					break;
