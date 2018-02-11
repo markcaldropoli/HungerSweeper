@@ -115,6 +115,19 @@ public class PlayerManager {
 			
 			checkSame2();
 		}
+		
+		if(players.size() <= 2 && players.get(0).getBoundary() != 2) {
+			System.out.println("The arena is getting smaller!");
+			System.out.println("Everyone has been transported within the boundaries!");
+			for(int i = 0; i < players.size(); i++) {
+				players.get(i).setBoundary(2);
+				
+				if(players.get(i).getX() >= 2) players.get(i).setX(1);
+				if(players.get(i).getY() >= 2) players.get(i).setY(1);
+			}
+			
+			checkSame2();
+		}
 	}
 	
 	public void checkSame() {
