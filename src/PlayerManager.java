@@ -8,14 +8,39 @@ public class PlayerManager {
 	private ArrayList<Traps> traps = new ArrayList<>();
 	
 	public void setTraps(){
-		Traps banana = new Traps("slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head.", 20, "banana", false);
-		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot", "Put a rock on your foot then move it.", "The mine doesn't go off", "The mine explodes under you", 50, "mine", false);
-		Traps pit = new Traps("you fall into a pit that holds a sword", "Try to clinb out with the sword", "Try to climb out with your hands", "Your hand slips and you cut yourself", "You sucessfully escape!", 15, "sword", true);
-		Traps avalance = new Traps("an avalance is coming down towards you", "Run away", "Hide behind a tree", "You can't outrun the avalance and get crushed", "The tree blocks the debris.", 30, "snowball", true);
-		Traps apple = new Traps("you see an apple in a tree", "Try to climb the tree to get it", "Wait for it to fall?", "You manage to sucessfully grab the apple", "The apple falls onto your face", 5, "apple", false);
+		Traps banana = new Traps("slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head.", 20, false);
+		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot", "Put a rock on your foot then move it.", "The mine doesn't go off", "The mine explodes under you", 50, false);
+		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to clinb out", "Try to stomp on the ants", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true);
+		Traps avalance = new Traps("an avalance is coming down towards you", "Run away", "Hide behind a tree", "You can't outrun the avalance and get crushed", "The tree blocks the debris.", 40, true);
+		Traps apple = new Traps("you see an apple in a tree", "Try to climb the tree to get it", "Ignore it", "You fall on the ground, unable to grab an apple", "You continue on your merry way", 5, false);
+		Traps panther = new Traps("you encounter a wild panther", "Run away", "Try to pet it", "The panther catches you and takes a bite", "The panther purrs and leaves you alone", 30, true);
+		Traps quicksand = new Traps("you've stepped in quicksand!", "Struggle", "Let it take you", "You get sucked in and suffocate before finally escaping", "The quicksand peacefully spits you out", 15, true);
+		Traps arrow = new Traps("you've stepped on a pressure plate and see an arrow about to fly towards you.", "Duck", "Try to catch it", "It passes over your head", "Why would you try to catch it and not duck, the arrow goes through your hand", 25, false);
+	}
+	
+	public void Trap(Player a, Traps b){
+		@SuppressWarnings("resource")
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Oh no, " + a.getName() + ", " + b.getDescription() + "\nDo you?:\n1. " + b.getChoice1() + "\n2. " + b.getChoice2() + "\n(Type 1 or 2)");
+		int n = reader.nextInt();
+		if(n == 1){
+			System.out.println(b.getAnswer1());
+			if(b.isAnswer()){
+				System.out.println("You take " + b.getHealthLoss() + " points of damage!");
+				a.setHealth(a.getHealth() - b.getHealthLoss());
+			}
+		}
+		if(n == 2){
+			System.out.println(b.getAnswer1());
+			if(b.isAnswer()){
+				System.out.println("You take " + b.getHealthLoss() + " points of damage!");
+				a.setHealth(a.getHealth() - b.getHealthLoss());
+			}
+		}
 	}
 
 	public void addPlayer(){
+		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
 		int n = 0, c = 0;
 		while(true){
@@ -48,7 +73,6 @@ public class PlayerManager {
 			players.add(new Computer(p));
 		}
 		checkSame();
-		reader.close();
 	}
 
 	public void removePlayer(String name) {

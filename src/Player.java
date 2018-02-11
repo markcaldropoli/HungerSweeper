@@ -11,8 +11,8 @@ public class Player {
 	public Player(String name) {
 		this.name = name;
 		Random random = new Random();
-		this.x = random.nextInt(15);
-		this.y = random.nextInt(15);
+		this.x = random.nextInt(6);
+		this.y = random.nextInt(6);
 	}
 	
 	public int getX() {
@@ -56,28 +56,28 @@ public class Player {
 		while(true) {
 			String mov = sc.nextLine();
 			if(mov.equalsIgnoreCase("up")) {
-				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 15) {
+				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 6) {
 					y--;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("down")) {
-				if(this.getX() > 0 && this.getX() < 15 && this.getY()+1 > 0 && this.getY()+1 < 15) {
+				if(this.getX() > 0 && this.getX() < 15 && this.getY()+1 > 0 && this.getY()+1 < 6) {
 					y++;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("right")) {
-				if(this.getX()+1 > 0 && this.getX()+1 < 15 && this.getY() > 0 && this.getY() < 15) {
+				if(this.getX()+1 > 0 && this.getX()+1 < 15 && this.getY() > 0 && this.getY() < 6) {
 					x++;
 					break;
 				} else {
 					System.out.println("Invalid move, please pick a different direction.");
 				}
 			} else if(mov.equalsIgnoreCase("left")) {
-				if(this.getX()-1 > 0 && this.getX()-1 < 15 && this.getY() > 0 && this.getY() < 15) {
+				if(this.getX()-1 > 0 && this.getX()-1 < 15 && this.getY() > 0 && this.getY() < 6) {
 					x--;
 					break;
 				} else {
