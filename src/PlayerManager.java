@@ -46,7 +46,8 @@ public class PlayerManager {
 				a.setHealth(a.getHealth() - b.getHealthLoss());
 			}
 		}
-		removeTrap(b);
+		b.setX(-1);
+		b.setY(-1);
 	}
 	
 	public void removeTrap(Traps a) {
@@ -147,7 +148,6 @@ public class PlayerManager {
 				if(players.get(i).getX() == traps.get(j).getX()){
 					if(players.get(i).getY() == traps.get(j).getY()){
 						Trap(players.get(i), traps.get(j));
-						j--;
 					}
 				}
 			}
