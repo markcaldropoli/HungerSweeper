@@ -7,5 +7,6 @@ public class Game {
 			pm.move();
 			pm.printPlayers();
 		}
+		System.out.println("Congratulations! " + pm.getPlayers().get(0).getName() + ", you've won!!!!!!!");
 	}
 }
