@@ -11,7 +11,7 @@ public class PlayerManager {
 	public void setTraps(){
 		Traps banana = new Traps("slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head.", 20, false);
 		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot", "Put a rock on your foot then move it.", "The mine doesn't go off", "The mine explodes under you", 50, false);
-		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to clinb out", "Try to stomp on the ants", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true);
+		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to climb out", "Try to stomp on the ants", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true);
 		Traps avalance = new Traps("an avalance is coming down towards you", "Run away", "Hide behind a tree", "You can't outrun the avalance and get crushed", "The tree blocks the debris.", 40, true);
 		Traps apple = new Traps("you see an apple in a tree", "Try to climb the tree to get it", "Ignore it", "You fall on the ground, unable to grab an apple", "You continue on your merry way", 5, false);
 		Traps panther = new Traps("you encounter a wild panther", "Run away", "Try to pet it", "The panther catches you and takes a bite", "The panther purrs and leaves you alone", 30, true);
@@ -45,6 +45,13 @@ public class PlayerManager {
 				System.out.println("You take " + b.getHealthLoss() + " points of damage!");
 				a.setHealth(a.getHealth() - b.getHealthLoss());
 			}
+		}
+		if(a.getHealth() <= 0){
+			System.out.print(a.getName() + " has died!");
+			removePlayer(a.getName());
+		}
+		else{
+			System.out.println(a.getName() + " has " + a.getHealth() + " health left!");
 		}
 		b.setX(-1);
 		b.setY(-1);
@@ -190,7 +197,7 @@ public class PlayerManager {
 					removePlayer(b.getName());
 					break;
 				}
-				System.out.println(b.getHealth());
+				System.out.println(b.getName() + " has " + b.getHealth() + " health left!");
 			}
 			if(one == false){
 				int chance = (int) (Math.random() * 5);
@@ -213,7 +220,7 @@ public class PlayerManager {
 					removePlayer(a.getName());
 					break;
 				}
-				System.out.println(a.getHealth());
+				System.out.println(a.getName() + " has " + a.getHealth() + " health left!");
 			}
 			if(two == false){
 				int chance = (int) (Math.random() * 5);
