@@ -113,7 +113,7 @@ public class PlayerManager {
 				if(players.get(i).getY() >= 3) players.get(i).setY(2);
 			}
 			
-			checkSame();
+			checkSame2();
 		}
 	}
 	
@@ -136,6 +136,18 @@ public class PlayerManager {
 			}
 		}
 	}
+	
+	public void checkSame2() {
+		for(int i = 0; i < players.size(); i++) {
+			for(int j = i+1; j < players.size(); j++) {
+				if(players.get(i).getX() == players.get(j).getX()) {
+					if(players.get(i).getY() == players.get(j).getY()) {
+						fight(players.get(i), players.get(j));
+						}
+					}
+				}
+			}
+		}
 	
 	public void move() {
 		for(int i = 0; i < players.size(); i++) {
