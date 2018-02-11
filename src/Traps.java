@@ -30,22 +30,22 @@ public class Traps {
 			int rand = random.nextInt(4);
 
 			if(rand == 0) {
-				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 15) {
+				if(this.getX() > 0 && this.getX() < 8 && this.getY()-1 > 0 && this.getY()-1 < 8) {
 					y--;
 					break;
 				}
 			} else if(rand == 1) {
-				if(this.getX() > 0 && this.getX() < 15 && this.getY()+1 > 0 && this.getY()+1 < 15) {
+				if(this.getX() > 0 && this.getX() < 8 && this.getY()+1 > 0 && this.getY()+1 < 8) {
 					y++;
 					break;
 				}
 			} else if(rand == 2) {
-				if(this.getX()+1 > 0 && this.getX()+1 < 15 && this.getY() > 0 && this.getY() < 15) {
+				if(this.getX()+1 > 0 && this.getX()+1 < 8 && this.getY() > 0 && this.getY() < 8) {
 					x++;
 					break;
 				}
 			} else if(rand == 3) {
-				if(this.getX()-1 > 0 && this.getX()-1 < 15 && this.getY() > 0 && this.getY() < 15) {
+				if(this.getX()-1 > 0 && this.getX()-1 < 8 && this.getY() > 0 && this.getY() < 8) {
 					x--;
 					break;
 				}

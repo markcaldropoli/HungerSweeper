@@ -110,7 +110,7 @@ public class PlayerManager {
 	
 	public void checkSame(){
 		for(int i = 0; i < players.size(); i++){
-			for(int j = 0; j < players.size(); i++){
+			for(int j = 0; j < players.size(); j++){
 				if(players.get(i).getX() == players.get(j).getX()){
 					if(players.get(i).getY() == players.get(j).getY()){
 						int whoMove = (int) Math.random() * 2;
@@ -131,7 +131,7 @@ public class PlayerManager {
 	public void move(){
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).move();
-			for(int j = 0; j < traps.size(); i++){
+			for(int j = 0; j < traps.size(); j++){
 				if(players.get(i).getX() == traps.get(j).getX()){
 					if(players.get(i).getY() == traps.get(j).getY()){
 						Trap(players.get(i), traps.get(j));
@@ -140,7 +140,7 @@ public class PlayerManager {
 			}
 		}
 		for(int i = 0; i < players.size(); i++){
-			for(int j = 0; j < players.size(); i++){
+			for(int j = 0; j < players.size(); j++){
 				if(players.get(i).getX() == players.get(j).getX()){
 					if(players.get(i).getY() == players.get(j).getY()){
 						fight(players.get(i), players.get(j));
