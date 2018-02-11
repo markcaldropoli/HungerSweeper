@@ -58,6 +58,10 @@ public class Traps {
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Oh no, " + a.getName() + ", " + description + "\nDo you?:\n1. " + choice1 + "\n2. " + choice2 + "\n(Type 1 or 2)");
 		int n = reader.nextInt();
+		while(n != 1 && n != 2){
+			System.out.println("Please enter a valid number. 1 and 2 are the only choices.");
+			n = reader.nextInt();
+		}
 		if(n == 1){
 			System.out.println(answer1);
 			if(answer){
