@@ -60,7 +60,7 @@ public class Miracle extends Traps {
 			System.out.println(answer1);
 			if(answer){
 				if(a.getHealth() + healthLoss >= 100){
-					System.out.print("Your health is fully restored!");
+					System.out.println("Your health is fully restored!");
 					a.setHealth(100);
 				}
 				else{
@@ -73,7 +73,7 @@ public class Miracle extends Traps {
 			System.out.println(answer2);
 			if(!(answer)){
 				if(a.getHealth() + healthLoss >= 100){
-					System.out.print("Your health is fully restored!");
+					System.out.println("Your health is fully restored!");
 					a.setHealth(100);
 				}
 				else{
