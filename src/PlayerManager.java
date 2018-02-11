@@ -97,6 +97,7 @@ public class PlayerManager {
 	public void printPlayers() {
 		for(int i = 0; i < players.size(); i++) {
 			System.out.println(players.get(i).getName() + "(" + players.get(i).getHealth() + ")");
+			System.out.println("Location: " + players.get(i).getX() + " , " + players.get(i).getY());
 		}
 	}	
 		
@@ -124,7 +125,6 @@ public class PlayerManager {
 				if(players.get(i).getX() >= 2) players.get(i).setX(1);
 				if(players.get(i).getY() >= 2) players.get(i).setY(1);
 			}
-			
 			checkSame2();
 		}
 	}
