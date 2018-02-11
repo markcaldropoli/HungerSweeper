@@ -284,6 +284,8 @@ public class PlayerManager {
 					int damage = (int) (Math.random() * 20 + 1);
 					a.setHealth(a.getHealth() - damage);
 					if(a.getHealth() <= 0) {
+						System.out.println("---------------------------");
+						System.out.println(b.getName() + " killed " + a.getName() + "!");
 						removePlayer(a.getName());
 						break;
 					}
