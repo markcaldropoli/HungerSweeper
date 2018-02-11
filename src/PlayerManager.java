@@ -208,12 +208,12 @@ public class PlayerManager {
 			if(two == false){
 				int chance = (int) (Math.random() * 5);
 				if(chance == 0){
-					System.out.println(a.getName() + " has ran!");
+					System.out.println(b.getName() + " has ran!");
 					b.move();
 					break;
 				}
 				else{
-					System.out.println(a.getName() + " couldn't get away!");
+					System.out.println(b.getName() + " couldn't get away!");
 				}
 			}
 		}
