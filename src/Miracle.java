@@ -42,10 +42,18 @@ public class Miracle extends Traps {
 	public boolean caughtTrap(Player a){
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
+		int n = 0;
 		System.out.println("Oh no, " + a.getName() + ", " + description + "\nDo you?:\n1. " + choice1 + "\n2. " + choice2 + "\n(Type 1 or 2)");
-		int n = reader.nextInt();
-		while(n != 1 && n != 2){
+		while(!reader.hasNextInt()) {
+			reader.next();
 			System.out.println("Please enter a valid number. 1 and 2 are the only choices.");
+		}
+		n = reader.nextInt();
+		while(n != 1 && n != 2){
+			while(!reader.hasNextInt()) {
+				reader.next();
+				System.out.println("Please enter a valid number. 1 and 2 are the only choices.");
+			}
 			n = reader.nextInt();
 		}
 		if(n == 1){
