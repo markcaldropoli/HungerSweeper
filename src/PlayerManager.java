@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class PlayerManager {
 	private ArrayList<Player> players = new ArrayList<>();
@@ -47,7 +46,9 @@ public class PlayerManager {
 			}
 		}
 		if(a.getHealth() <= 0){
+			System.out.println("---------------------------");
 			System.out.print(a.getName() + " has died!");
+			System.out.println("---------------------------");
 			removePlayer(a.getName());
 		}
 		else{
@@ -193,7 +194,9 @@ public class PlayerManager {
 				System.out.println(b.getName() + " takes " + damage + " pts damage!");
 				b.setHealth(b.getHealth() - damage);
 				if(b.getHealth() <= 0){
+					System.out.println("---------------------------");
 					System.out.println(a.getName() + " killed " + b.getName() + "!");
+					System.out.println("---------------------------");
 					removePlayer(b.getName());
 					break;
 				}
@@ -216,7 +219,9 @@ public class PlayerManager {
 				System.out.println(a.getName() + " takes " + damage + " pts of damage!");
 				a.setHealth(a.getHealth() - damage);
 				if(a.getHealth() <= 0){
+					System.out.println("---------------------------");
 					System.out.println(b.getName() + " killed " + a.getName() + "!");
+					System.out.println("---------------------------");
 					removePlayer(a.getName());
 					break;
 				}
