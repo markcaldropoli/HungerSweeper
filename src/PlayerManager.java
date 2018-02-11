@@ -47,7 +47,7 @@ public class PlayerManager {
 		}
 		if(a.getHealth() <= 0){
 			System.out.println("---------------------------");
-			System.out.print(a.getName() + " has died!");
+			System.out.println(a.getName() + " has died!");
 			System.out.println("---------------------------");
 			removePlayer(a.getName());
 		}
