@@ -7,14 +7,14 @@ public class Player {
 	private int y;
 	private String name;
 	private int health = 100;
-	private int boundary = 5;
+	private int boundary = 4;
 	private boolean isPlayer = true;
 	
 	public Player(String name) {
 		this.name = name;
 		Random random = new Random();
-		this.x = random.nextInt(5);
-		this.y = random.nextInt(5);
+		this.x = random.nextInt(4);
+		this.y = random.nextInt(4);
 	}
 	
 	public int getX() {
