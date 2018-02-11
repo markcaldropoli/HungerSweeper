@@ -12,7 +12,7 @@ public class PlayerManager {
 		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot", "Put a rock on your foot then move it.", "The mine doesn't go off", "The mine explodes under you", 50, false);
 		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to climb out", "Try to stomp on the ants", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true);
 		Traps avalance = new Traps("an avalance is coming down towards you", "Run away", "Hide behind a tree", "You can't outrun the avalance and get crushed", "The tree blocks the debris.", 40, true);
-		Traps apple = new Traps("you see an apple in a tree", "Try to climb the tree to get it", "Ignore it", "You fall on the ground, unable to grab an apple", "You continue on your merry way", 5, false);
+		Traps apple = new Traps("you see an apple in a tree", "Try to climb the tree to get it", "Ignore it", "You fall on the ground, unable to grab an apple", "You continue on your merry way", 5, true);
 		Traps panther = new Traps("you encounter a wild panther", "Run away", "Try to pet it", "The panther catches you and takes a bite", "The panther purrs and leaves you alone", 30, true);
 		Traps quicksand = new Traps("you've stepped in quicksand!", "Struggle", "Let it take you", "You get sucked in and suffocate before finally escaping", "The quicksand peacefully spits you out", 15, true);
 		Traps arrow = new Traps("you've stepped on a pressure plate and see an arrow about to fly towards you.", "Duck", "Try to catch it", "It passes over your head", "Why would you try to catch it and not duck, the arrow goes through your hand", 25, false);
