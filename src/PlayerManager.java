@@ -16,6 +16,14 @@ public class PlayerManager {
 		Traps panther = new Traps("you encounter a wild panther", "Run away", "Try to pet it", "The panther catches you and takes a bite", "The panther purrs and leaves you alone", 30, true);
 		Traps quicksand = new Traps("you've stepped in quicksand!", "Struggle", "Let it take you", "You get sucked in and suffocate before finally escaping", "The quicksand peacefully spits you out", 15, true);
 		Traps arrow = new Traps("you've stepped on a pressure plate and see an arrow about to fly towards you.", "Duck", "Try to catch it", "It passes over your head", "Why would you try to catch it and not duck, the arrow goes through your hand", 25, false);
+		traps.add(banana);
+		traps.add(mine);
+		traps.add(pit);
+		traps.add(avalance);
+		traps.add(apple);
+		traps.add(panther);
+		traps.add(quicksand);
+		traps.add(arrow);
 	}
 	
 	public void Trap(Player a, Traps b){
