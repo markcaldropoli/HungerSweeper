@@ -8,7 +8,7 @@ public class PlayerManager {
 	private ArrayList<Traps> traps = new ArrayList<>();
 	
 	public void setTraps() {
-		Traps banana = new Traps("slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head!", 20, false);
+		Traps banana = new Traps("you slipped on a banana!", "Break your fall with you hand?", "Try to stand tall?", "You break your fall sucessfully!", "You fall and hit your head!", 20, false);
 		Traps mine = new Traps("you stepped on a mine!", "Slowly lift your foot?", "Put a rock on your foot then move it?", "The mine doesn't go off", "The mine explodes under you!", 50, false);
 		Traps pit = new Traps("you fall into a pit that is filled with ants!", "Try to climb out?", "Try to stomp on the ants?", "Your hand slips and you fall into the ant pit", "You manage to kill most of the ants!", 15, true);
 		Traps avalance = new Traps("an avalance is coming down towards you!", "Run away?", "Hide behind a tree?", "You can't outrun the avalance and get crushed", "The tree blocks the debris!", 40, true);
@@ -167,7 +167,7 @@ public class PlayerManager {
 			for(int j = 0; j < traps.size(); j++) {
 				if(players.get(i).getX() == traps.get(j).getX()) {
 					if(players.get(i).getY() == traps.get(j).getY()) {
-						if(traps.get(j).caughtTrap(players.get(i))) {
+						if(players.get(i).caughtTrap(traps.get(j))) {
 							removePlayer(players.get(i).getName());
 						}
 					}

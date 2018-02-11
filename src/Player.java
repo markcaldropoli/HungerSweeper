@@ -112,6 +112,10 @@ public class Player {
 		}
 	}
 	
+	public boolean caughtTrap(Traps a){
+		return a.caughtTrap(this, true);
+	}
+	
 	public static void main(String[] args) {
 		Player p1 = new Player("Mark");
 		Player p2 = new Player("Marc");

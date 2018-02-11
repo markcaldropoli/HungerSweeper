@@ -94,6 +94,10 @@ public class Computer extends Player {
 		else return false;
 	}
 	
+	public boolean caughtTrap(Traps a){
+		return a.caughtTrap(this, false);
+	}
+	
 	public static void main(String[] args) {
 		Computer p1 = new Computer("Mark");
 		Computer p2 = new Computer("Marc");
