@@ -89,27 +89,27 @@ public class Computer extends Player {
 	public boolean fight(Player a) {
 		Random random = new Random();
 		if(health - a.getHealth() <= -20){
-			int rand = random.nextInt(4);
+			int rand = random.nextInt(6);
 			if(rand == 0) return true;
 			else return false;		
 		}
 		else if(health - a.getHealth() <= -10){
-			int rand = random.nextInt(3);
+			int rand = random.nextInt(5);
 			if(rand == 0) return true;
 			else return false;
 		}
 		else if(health - a.getHealth() >= 0 && health - a.getHealth() <- 9){
-			int rand = random.nextInt(2);
-			if(rand == 0) return true;
-			else return false;	
+			int rand = random.nextInt(4);
+			if(rand == 0) return false ;
+			else return true;	
 		}
 		else if(health - a.getHealth() >= 10){
-			int rand = random.nextInt(3);
+			int rand = random.nextInt(5);
 			if(rand == 0) return false;
 			else return true;
 		}
 		else if(health - a.getHealth() >= 20){
-			int rand = random.nextInt(4);
+			int rand = random.nextInt(6);
 			if(rand == 0) return false;
 			else return true;	
 		}
