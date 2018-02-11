@@ -104,7 +104,7 @@ public class PlayerManager {
 	
 	public void update() {
 		if(players.size() <= 5 && players.get(0).getBoundary() != 3) {
-			System.out.println("The arena is getting smaller!");
+			System.out.println("The boundaries have shrunk to a 2x2!");
 			System.out.println("Everyone has been transported within the boundaries!");
 			for(int i = 0; i < players.size(); i++) {
 				players.get(i).setBoundary(3);
@@ -117,7 +117,7 @@ public class PlayerManager {
 		}
 		
 		if(players.size() == 2 && players.get(0).getBoundary() != 2) {
-			System.out.println("The arena is getting smaller!");
+			System.out.println("The boundaries have shrunk to a 2x2!");
 			System.out.println("Everyone has been transported within the boundaries!");
 			for(int i = 0; i < players.size(); i++) {
 				players.get(i).setBoundary(2);
