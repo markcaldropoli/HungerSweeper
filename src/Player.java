@@ -8,6 +8,7 @@ public class Player {
 	private String name;
 	private int health = 100;
 	private int boundary = 6;
+	private boolean isPlayer = true;
 	
 	public Player(String name) {
 		this.name = name;
@@ -56,9 +57,15 @@ public class Player {
 		this.boundary = boundary;
 	}
 
+	public void print(){
+		System.out.println("---------------------------");
+		System.out.println(name + " you've started at the same place as another player!");
+	}
+	
 	public void move() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
+		System.out.println("---------------------------");
 		System.out.println(name + ", please input a direction: ");
 		System.out.println("(up,down,right,left)");
 		
@@ -113,6 +120,14 @@ public class Player {
 	}
 	
 	public boolean caughtTrap(Traps a){
-		return a.caughtTrap(this, true);
+		return a.caughtTrap(this, isPlayer);
+	}
+
+	public boolean isPlayer() {
+		return isPlayer;
+	}
+
+	public void setPlayer(boolean isPlayer) {
+		this.isPlayer = isPlayer;
 	}
 }

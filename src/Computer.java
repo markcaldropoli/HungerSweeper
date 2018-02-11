@@ -6,6 +6,7 @@ public class Computer extends Player {
 	private String name;
 	private int health = 100;
 	private int boundary = 6;
+	private boolean isPlayer = false;
 	
 	public Computer(String name) {
 		super(name);
@@ -116,8 +117,19 @@ public class Computer extends Player {
 		return false;
 	}
 	
+	public void print(){
+	}
+	
 	public boolean caughtTrap(Traps a){
-		return a.caughtTrap(this, false);
+		return a.caughtTrap(this, isPlayer);
+	}
+
+	public boolean isPlayer() {
+		return isPlayer;
+	}
+
+	public void setPlayer(boolean isPlayer) {
+		this.isPlayer = isPlayer;
 	}
 }
 	

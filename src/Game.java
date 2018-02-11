@@ -12,12 +12,6 @@ public class Game {
 			pm.move();
 			System.out.println("---------------------------");
 			pm.printPlayers();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			System.out.println("---------------------------");
 		}
 		System.out.println("Congratulations! " + pm.getPlayers().get(0).getName() + ", you've won!!!!!!!");
 	}
