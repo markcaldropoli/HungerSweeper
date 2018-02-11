@@ -11,8 +11,8 @@ public class Computer extends Player {
 		this.name = name;
 		
 		Random random = new Random();
-		this.x = random.nextInt(15);
-		this.y = random.nextInt(15);
+		this.x = random.nextInt(6);
+		this.y = random.nextInt(6);
 	}
 	
 	public int getX() {
@@ -54,22 +54,22 @@ public class Computer extends Player {
 			int rand = random.nextInt(4);
 			
 			if(rand == 0) {
-				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 15) {
+				if(this.getX() > 0 && this.getX() < 6 && this.getY()-1 > 0 && this.getY()-1 < 6) {
 					y--;
 					break;
 				}
 			} else if(rand == 1) {
-				if(this.getX() > 0 && this.getX() < 15 && this.getY()+1 > 0 && this.getY()+1 < 15) {
+				if(this.getX() > 0 && this.getX() < 6 && this.getY()+1 > 0 && this.getY()+1 < 6) {
 					y++;
 					break;
 				}
 			} else if(rand == 2) {
-				if(this.getX()+1 > 0 && this.getX()+1 < 15 && this.getY() > 0 && this.getY() < 15) {
+				if(this.getX()+1 > 0 && this.getX()+1 < 6 && this.getY() > 0 && this.getY() < 6) {
 					x++;
 					break;
 				}
 			} else if(rand == 3) {
-				if(this.getX()-1 > 0 && this.getX()-1 < 15 && this.getY() > 0 && this.getY() < 15) {
+				if(this.getX()-1 > 0 && this.getX()-1 < 6 && this.getY() > 0 && this.getY() < 6) {
 					x--;
 					break;
 				}

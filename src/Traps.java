@@ -23,6 +23,35 @@ public class Traps {
 		this.healthLoss = healthLoss;
 		this.answer = answer;
 	}
+	public void move() {
+		while(true) {
+			//random # 0=up, 1=down, 2=right, 3=left
+			Random random = new Random();
+			int rand = random.nextInt(4);
+
+			if(rand == 0) {
+				if(this.getX() > 0 && this.getX() < 15 && this.getY()-1 > 0 && this.getY()-1 < 15) {
+					y--;
+					break;
+				}
+			} else if(rand == 1) {
+				if(this.getX() > 0 && this.getX() < 15 && this.getY()+1 > 0 && this.getY()+1 < 15) {
+					y++;
+					break;
+				}
+			} else if(rand == 2) {
+				if(this.getX()+1 > 0 && this.getX()+1 < 15 && this.getY() > 0 && this.getY() < 15) {
+					x++;
+					break;
+				}
+			} else if(rand == 3) {
+				if(this.getX()-1 > 0 && this.getX()-1 < 15 && this.getY() > 0 && this.getY() < 15) {
+					x--;
+					break;
+				}
+			}
+		}
+	}
 	public String getDescription() {
 		return description;
 	}
