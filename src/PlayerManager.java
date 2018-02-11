@@ -147,6 +147,7 @@ public class PlayerManager {
 				if(players.get(i).getX() == traps.get(j).getX()){
 					if(players.get(i).getY() == traps.get(j).getY()){
 						Trap(players.get(i), traps.get(j));
+						j--;
 					}
 				}
 			}
