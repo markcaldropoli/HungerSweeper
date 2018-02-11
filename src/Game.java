@@ -1,5 +1,5 @@
 public class Game {
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args){
 		PlayerManager pm = new PlayerManager();
 		pm.addPlayer();
 		pm.setTraps();

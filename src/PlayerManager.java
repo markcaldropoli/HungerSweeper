@@ -114,7 +114,7 @@ public class PlayerManager {
 		return name;
 	}
 
-	public void printPlayers() throws InterruptedException{
+	public void printPlayers(){
 		for(int i = 0; i < players.size(); i++){
 			System.out.println(players.get(i).getName() + "(" + players.get(i).getHealth() + ")");
 		}
