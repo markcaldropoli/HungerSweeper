@@ -1,17 +1,23 @@
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
  
 public class TableViewSample extends Application {
- 
     private TableView table = new TableView();
+    private final ObservableList<Player> data = FXCollections.observableArrayList(
+    	    new Player("Jacob")
+    	);
+    
     public static void main(String[] args) {
         launch(args);
     }
@@ -43,9 +49,14 @@ public class TableViewSample extends Application {
         TableColumn tw = new TableColumn("12");
         TableColumn thi = new TableColumn("13");
         TableColumn fo = new TableColumn("14");
-
         
         table.getColumns().addAll(z,o,t,th,f,fi,s,se,e,n,te,el,tw,thi,fo);
+        
+        z.setCellValueFactory(
+        	    new PropertyValueFactory<Player, String>("firstName")
+        	);
+        
+        table.setItems(data);
  
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
