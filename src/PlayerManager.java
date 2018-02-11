@@ -98,9 +98,8 @@ public class PlayerManager {
 		for(int i = 0; i < players.size(); i++) {
 			System.out.println(players.get(i).getName() + "(" + players.get(i).getHealth() + ")");
 		}
+	}	
 		
-		update();
-	}
 	
 	public void update() {
 		if(players.size() <= 5 && players.get(0).getBoundary() > 3) {

@@ -5,6 +5,7 @@ public class Game {
 		pm.addPlayer();
 		pm.setTraps();
 		while(pm.getPlayers().size() != 1) {
+			pm.update();
 			pm.move();
 			pm.printPlayers();
 		}
