@@ -31,8 +31,8 @@ public class PlayerManager {
 			}
 		}
 		if(n == 2){
-			System.out.println(b.getAnswer1());
-			if(b.isAnswer()){
+			System.out.println(b.getAnswer2());
+			if(!(b.isAnswer())){
 				System.out.println("You take " + b.getHealthLoss() + " points of damage!");
 				a.setHealth(a.getHealth() - b.getHealthLoss());
 			}
