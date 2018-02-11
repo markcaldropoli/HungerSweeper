@@ -118,7 +118,6 @@ public class PlayerManager {
 		for(int i = 0; i < players.size(); i++){
 			System.out.println(players.get(i).getName() + "(" + players.get(i).getHealth() + ")");
 		}
-		TimeUnit.SECONDS.sleep(2);
 	}
 	
 	public void checkSame(){

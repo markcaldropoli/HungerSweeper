@@ -51,6 +51,7 @@ public class Player {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println(name + ", please input a direction: ");
+		System.out.println("You are at " + x + " , " + y);
 		System.out.println("(up,down,right,left)");
 		
 		while(true) {
